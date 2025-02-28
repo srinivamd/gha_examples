@@ -33,7 +33,8 @@ jobs:
           echo "lscpu_out=$(pwd)" >> $GITHUB_OUTPUT
           {
             echo 'lscpu_log<<EOF'
-            echo $(lscpu)
+            Line 1
+            Line 2
             echo EOF
           } >> $GITHUB_OUTPUT
 
