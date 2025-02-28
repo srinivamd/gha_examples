@@ -31,4 +31,4 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
-          echo ${{ steps.step1.step1_out }}
+          echo ${{ steps.step1.outputs.step1_out }}
