@@ -50,4 +50,4 @@ jobs:
           echo ${{ steps.lscpu.outputs.bogomips_key }}
           echo ${{ steps.lscpu.outputs.bogomips_value }}
           echo ${{ join(steps.lscpu.outputs.bogomips_key, steps.lscpu.outputs.bogomips_value) }}
-          echo ${{ toJSON(steps.lscpu.outputs.bogomips_key, steps.lscpu.outputs.bogomips_value) }}
+          echo ${{ toJSON(steps.lscpu.outputs.bogomips_key) }}
