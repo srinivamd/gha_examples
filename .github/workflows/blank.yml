@@ -22,9 +22,13 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Run a one-line script
+        id: step0
+        run: lscpu > lscpu.log
+
+      - name: Run a one-line script
         id: step1
         run: echo "step1_out=Hello, world!" >> $GITHUB_OUTPUT
-
+        
       # Runs a single command using the runners shell
       - name: Run a one-line script
         id: lscpu
@@ -49,5 +53,4 @@ jobs:
           echo ${{ steps.lscpu.outputs.lscpu_out }}
           echo ${{ steps.lscpu.outputs.bogomips_key }}
           echo ${{ steps.lscpu.outputs.bogomips_value }}
-          echo ${{ join(steps.lscpu.outputs.bogomips_key, steps.lscpu.outputs.bogomips_value) }}
-          echo ${{ toJSON("a", "1") }}
+        
