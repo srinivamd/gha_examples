@@ -31,6 +31,8 @@ jobs:
         run: |
           lscpu
           echo "lscpu_out=$(pwd)" >> $GITHUB_OUTPUT
+          echo "bogomips_value=$(lscpu | grep BogoMIPS | awk '{print $2}')" >> $GITHUB_OUTPUT
+          echo "bogomips_key=BogoMIPS" >> $GITHUB_OUTPUT
           {
             echo 'lscpu_log<<EOF'
             lscpu
@@ -45,4 +47,5 @@ jobs:
           echo test, and deploy your project.
           echo ${{ steps.step1.outputs.step1_out }}
           echo ${{ steps.lscpu.outputs.lscpu_out }}
-          echo ${{ steps.lscpu.outputs.lscpu_log }}
+          echo ${{ steps.lscpu.outputs.bogpmips_key }}
+          echo ${{ steps.lscpu.outputs.bogpmips_value }}
