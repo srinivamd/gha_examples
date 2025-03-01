@@ -47,5 +47,5 @@ jobs:
           echo test, and deploy your project.
           echo ${{ steps.step1.outputs.step1_out }}
           echo ${{ steps.lscpu.outputs.lscpu_out }}
-          echo ${{ steps.lscpu.outputs.bogpmips_key }}
-          echo ${{ steps.lscpu.outputs.bogpmips_value }}
+          echo ${{ steps.lscpu.outputs.bogomips_key }}
+          echo ${{ steps.lscpu.outputs.bogomips_value }}
