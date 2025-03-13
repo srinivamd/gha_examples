@@ -29,7 +29,9 @@ jobs:
 
       - name: Run a one-line script
         id: step1
-        run: echo "step1_out=Hello, world!" >> $GITHUB_OUTPUT
+        run: |
+          echo "step1_out=Hello, world!" >> $GITHUB_OUTPUT
+          echo ${{ github.run_id }}
         
       # Runs a single command using the runners shell
       - name: Run a one-line script
@@ -56,4 +58,5 @@ jobs:
           echo ${{ steps.lscpu.outputs.bogomips_key }}
           echo ${{ steps.lscpu.outputs.bogomips_value }}
           echo $(grep BogoMIPS lscpu.log)
+          echo ${{ github.run_id }}
         
